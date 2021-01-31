@@ -1,9 +1,10 @@
-library(readr)
-library(tidyr)
-library(ggplot2)
-library(gganimate)
+pckgs<- c("readr", "tidyr", "ggplot2", "gganimate")
+for(i in pckgs){
+  if(!require(i, character.only = TRUE))
+    install.packages(i)
+  library(i, character.only = TRUE)
+}
 
-####needs checking, links removed
 
 
 d<- paste("https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=newDeaths28DaysByDeathDate&format=csv")
@@ -19,3 +20,5 @@ chart2<- ggplot(data = data, aes(x = date, y = newDeaths28DaysByDeathDate, group
   theme(legend.position = "top", legend.title = element_blank(),legend.key = element_blank()) +
   labs(title = "date:{frame_along}") +
   transition_reveal(date)
+
+chart2
