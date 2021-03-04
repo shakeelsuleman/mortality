@@ -1,5 +1,5 @@
 # UK Covid cases - animation
-## This short script retrieves public Covid-19 data and plots an animation of trends
+## This short script retrieves public Covid-19 mortality data and plots an animation of trends
 
 
 * [ECDC Website](https://www.ecdc.europa.eu/en/publications-data/download-todays-data-geographic-distribution-covid-19-cases-worldwide)
